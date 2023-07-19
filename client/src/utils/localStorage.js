@@ -25,7 +25,7 @@ export const removeBookId = (bookId) => {
 
   const updatedSavedBookIds = savedBookIds?.filter(
     (savedBookId) => savedBookId !== bookId,
-);
+  );
   localStorage.setItem("saved_books", JSON.stringify(updatedSavedBookIds));
 
   return true;
