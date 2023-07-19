@@ -17,7 +17,6 @@ const SearchBooks = () => {
 
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
-  console.log('my saved books',savedBookIds )
   // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
   // learn more here: https://reactjs.org/docs/hooks-effect.html#effects-with-cleanup
   useEffect(() => {
@@ -42,15 +41,14 @@ const SearchBooks = () => {
       }
 
       const { items } = await response.json();
-      
-    const bookData = items.map((book) => ({
-      bookId: book.id,
-      authors: book.volumeInfo.authors || ["No author to display"],
-      title: book.volumeInfo.title,
-      description: book.volumeInfo.description,
-      image: book.volumeInfo.imageLinks?.thumbnail || "",
-    }));
 
+      const bookData = items.map((book) => ({
+        bookId: book.id,
+        authors: book.volumeInfo.authors || ["No author to display"],
+        title: book.volumeInfo.title,
+        description: book.volumeInfo.description,
+        image: book.volumeInfo.imageLinks?.thumbnail || "",
+      }));
 
       setSearchedBooks(bookData);
       setSearchInput("");
@@ -63,22 +61,22 @@ const SearchBooks = () => {
   const handleSaveBook = async (bookId) => {
     // find the book in `searchedBooks` state by the matching id
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
-   
+
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
     if (!token) {
       return false;
     }
-    console.log(bookToSave)
+    console.log(bookToSave);
     try {
-      const {data} = await saveBook({variables:{ input: bookToSave }});
-      console.log(data)
+      const { data } = await saveBook({ variables: { input: bookToSave } });
+      console.log(data);
       // if (!response.ok) {
       //   throw new Error("something went wrong!");
       // }
 
       // if book successfully saves to user's account, save book id to state
-      setSavedBookIds([...savedBookIds,  bookToSave.bookId]);
+      setSavedBookIds([...savedBookIds, bookToSave.bookId]);
     } catch (err) {
       console.error(err);
     }
@@ -120,7 +118,7 @@ const SearchBooks = () => {
         <Row>
           {searchedBooks.map((book) => {
             return (
-              <Col md="4" key={book.bookId}  >
+              <Col md="4" key={book.bookId}>
                 <Card border="dark">
                   {book.image ? (
                     <Card.Img
@@ -136,13 +134,13 @@ const SearchBooks = () => {
                     {Auth.loggedIn() && (
                       <Button
                         disabled={savedBookIds?.some(
-                          (savedBookId) => savedBookId === book.bookId
+                          (savedBookId) => savedBookId === book.bookId,
                         )}
                         className="btn-block btn-info"
                         onClick={() => handleSaveBook(book.bookId)}
                       >
                         {savedBookIds?.some(
-                          (savedBookId) => savedBookId === book.bookId
+                          (savedBookId) => savedBookId === book.bookId,
                         )
                           ? "This book has already been saved!"
                           : "Save this Book!"}

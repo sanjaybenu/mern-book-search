@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 
 //import { loginUser } from "../utils/API";
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
@@ -29,11 +29,11 @@ const LoginForm = (props) => {
     //   event.stopPropagation();
     // }
 
-      try {
-        const {data} = await login({
-          variables: { ...userFormData },
-        });
-        Auth.login(data.login.token);
+    try {
+      const { data } = await login({
+        variables: { ...userFormData },
+      });
+      Auth.login(data.login.token);
 
       // if (!response.ok) {
       //   throw new Error("something went wrong!");
@@ -43,7 +43,7 @@ const LoginForm = (props) => {
       // console.log(user);
       // Auth.login(token);
     } catch (err) {
-    console.error(err);
+      console.error(err);
       setShowAlert(true);
     }
 
