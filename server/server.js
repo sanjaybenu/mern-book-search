@@ -1,4 +1,4 @@
-//refactor
+//refactor to create ApolloServer and use it for GraphQL
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");

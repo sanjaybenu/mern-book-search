@@ -3,6 +3,7 @@ import { Container, Col, Form, Button, Card, Row } from "react-bootstrap";
 
 import Auth from "../utils/auth";
 // import { saveBook, searchGoogleBooks } from "../utils/API";
+//remove saveBook and instead use mutation SAVE_BOOK
 import { searchGoogleBooks } from "../utils/API";
 import { useMutation } from "@apollo/client";
 import { SAVE_BOOK } from "../utils/mutations";

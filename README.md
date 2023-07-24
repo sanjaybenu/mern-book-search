@@ -4,19 +4,18 @@
 
 ## Table of Contents
 
-* [Description](#description)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Contribute](#contribute)
-* [Contributors](#contributors)
-* [Testing](#tests)
-* [License](#license)
-* [Questions](#questions)
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribute](#contribute)
+- [Contributors](#contributors)
+- [Testing](#tests)
+- [License](#license)
+- [Questions](#questions)
 
 ## Description
 
-This App is for avid readers who want to search for books and keep a list of books to purchase later. They can also read synopsis on each book to decide if they want to save it to their wish list. 
-
+This App is for avid readers who want to search for books and keep a list of books to purchase later. They can also read synopsis on each book to decide if they want to save it to their wish list.
 
 ## Screenshots
 
@@ -28,7 +27,7 @@ Go to the following github repository and clone the project into a local directo
 
 https://github.com/sanjaybenu/mern-book-search
 
-Before you can start using the app, please ensure you have package.json in your folder. 
+Before you can start using the app, please ensure you have package.json in your folder.
 
 ```
 package.json
@@ -39,8 +38,6 @@ Now run the following command in terminal to install dependencies you need for t
 ```
 npm install
 ```
-
-
 
 Open terminal and open the directory where this code resides. When you are in the root directory run the following command.
 
@@ -97,7 +94,6 @@ I would like to acknowledge my tutors Jack Song and Sid Baral of Monash Universi
 This project is created under MIT license.
 
 Users of software using an MIT License are permitted to use, copy, modify, merge publish, distribute, sublicense, and sell copies of the software.
-
 
 ## Questions
 
